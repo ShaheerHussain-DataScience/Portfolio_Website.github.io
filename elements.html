@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<!--
+  Resources page (repurposed from elements.html)
+  Solid State by HTML5 UP
+-->
+<html>
+  <head>
+    <title>Resources I Use</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      /* minimal helpers to make anchor cards feel like the theme's cards */
+      .resources-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(12, 1fr);
+      }
+      .resource {
+        grid-column: span 6;
+      }
+      @media (max-width: 980px) { .resource { grid-column: span 12; } }
+
+      .resource-card {
+        display: block;
+        padding: 1.75rem;
+        border-radius: 0.5rem;
+        background: rgba(255,255,255,0.025);
+        border: 1px solid rgba(255,255,255,0.08);
+        transition: transform .12s ease, border-color .12s ease, background .12s ease;
+        text-decoration: none;
+      }
+      .resource-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255,255,255,0.18);
+        background: rgba(255,255,255,0.04);
+      }
+      .resource-meta {
+        opacity: .7;
+        font-size: 0.9rem;
+        margin-top: .25rem;
+        word-break: break-all;
+      }
+      .fav {
+        width: 20px; height: 20px; border-radius: 4px; vertical-align: -4px; margin-right: .5rem;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="index.html">Data Analyst Portfolio</a></h1>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <div class="inner">
+          <h2>Menu</h2>
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="generic.html">About me</a></li>
+            <li><a href="cv.html">Curriculum Vitae</a></li>
+            <li><a href="elements.html">Resources I use</a></li>
+          </ul>
+          <a href="#" class="close">Close</a>
+        </div>
+      </nav>
+
+      <!-- Wrapper -->
+      <section id="wrapper">
+        <header>
+          <div class="inner">
+            <h2>Resources</h2>
+            <p>A curated list of sites, docs, and guides I regularly use for data analysis and data science.</p>
+          </div>
+        </header>
+
+        <div class="wrapper">
+          <div class="inner">
+            <!-- ====== Resources Grid ====== -->
+            <div class="resources-grid">
+
+              <!-- Example cards — replace or add more by duplicating any .resource block -->
+
+              <div class="resource">
+                <a class="resource-card" href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener">
+                  <h3 class="major">
+                    <img class="fav" src="https://www.google.com/s2/favicons?domain=pandas.pydata.org" alt="">Pandas Documentation
+                  </h3>
+                  <p>Official docs for data wrangling in Python: indexing, joins, groupby, time series, IO, and more.</p>
+                  <div class="resource-meta">pandas.pydata.org/docs</div>
+                </a>
+              </div>
+
+              <div class="resource">
+                <a class="resource-card" href="https://scikit-learn.org/stable/" target="_blank" rel="noopener">
+                  <h3 class="major">
+                    <img class="fav" src="https://www.google.com/s2/favicons?domain=scikit-learn.org" alt="">scikit-learn
+                  </h3>
+                  <p>Machine learning in Python: model APIs, pipelines, preprocessing, metrics, examples, and tutorials.</p>
+                  <div class="resource-meta">scikit-learn.org/stable</div>
+                </a>
+              </div>
+
+              <div class="resource">
+                <a class="resource-card" href="https://matplotlib.org/stable/" target="_blank" rel="noopener">
+                  <h3 class="major">
+                    <img class="fav" src="https://www.google.com/s2/favicons?domain=matplotlib.org" alt="">Matplotlib
+                  </h3>
+                  <p>Plotting library docs including gallery examples for quick visualization patterns.</p>
+                  <div class="resource-meta">matplotlib.org/stable</div>
+                </a>
+              </div>
+
+              <div class="resource">
+                <a class="resource-card" href="https://learn.microsoft.com/power-bi/" target="_blank" rel="noopener">
+                  <h3 class="major">
+                    <img class="fav" src="https://www.google.com/s2/favicons?domain=learn.microsoft.com" alt="">Power BI Docs
+                  </h3>
+                  <p>Guides for DAX, Power Query (M), data modeling, admin, and deployment best practices.</p>
+                  <div class="resource-meta">learn.microsoft.com/power-bi</div>
+                </a>
+              </div>
+
+              <div class="resource">
+                <a class="resource-card" href="https://www.tableau.com/learn" target="_blank" rel="noopener">
+                  <h3 class="major">
+                    <img class="fav" src="https://www.google.com/s2/favicons?domain=tableau.com" alt="">Tableau Learning
+                  </h3>
+                  <p>Tutorials, training paths, and sample dashboards to level up Tableau skills.</p>
+                  <div class="resource-meta">tableau.com/learn</div>
+                </a>
+              </div>
+
+              <div class="resource">
+                <a class="resource-card" href="https://www.kaggle.com/" target="_blank" rel="noopener">
+                  <h3 class="major">
+                    <img class="fav" src="https://www.google.com/s2/favicons?domain=kaggle.com" alt="">Kaggle
+                  </h3>
+                  <p>Datasets, notebooks, and competitions—great for practice, examples, and exploration.</p>
+                  <div class="resource-meta">kaggle.com</div>
+                </a>
+              </div>
+
+              <div class="resource">
+                <a class="resource-card" href="https://numpy.org/doc/stable/" target="_blank" rel="noopener">
+                  <h3 class="major">
+                    <img class="fav" src="https://www.google.com/s2/favicons?domain=numpy.org" alt="">NumPy Docs
+                  </h3>
+                  <p>Core numerical computing in Python: arrays, broadcasting, linear algebra, random, and performance tips.</p>
+                  <div class="resource-meta">numpy.org/doc/stable</div>
+                </a>
+              </div>
+
+              <div class="resource">
+                <a class="resource-card" href="https://towardsdatascience.com/" target="_blank" rel="noopener">
+                  <h3 class="major">
+                    <img class="fav" src="https://www.google.com/s2/favicons?domain=towardsdatascience.com" alt="">Towards Data Science
+                  </h3>
+                  <p>Community articles on analytics, ML, visualization, and practical case studies.</p>
+                  <div class="resource-meta">towardsdatascience.com</div>
+                </a>
+              </div>
+
+            </div>
+            <!-- ====== /Resources Grid ====== -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <section id="footer">
+        <div class="inner">
+          <h2 class="major">Get in touch</h2>
+          <p>Have a question or a project in mind? Drop me a message — I’m always happy to connect and chat about data, analytics, or new ideas.</p>
+          <form method="post" action="#">
+            <div class="fields">
+              <!--<div class="field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="4"></textarea>
+              </div>
+            </div>
+            <ul class="actions">
+              <li><input type="submit" value="Send Message" /></li>
+            </ul>
+          </form>-->
+          <ul class="copyright">
+            <li>&copy; Portfolio by Shaheer Hussain.</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

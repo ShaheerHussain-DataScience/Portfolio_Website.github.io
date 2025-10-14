@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!--
+  CV Viewer Page - Solid State by HTML5 UP theme wrapper
+  Drop your PDF at: assets/cv/Shaheer_Hussain_CV.pdf
+-->
+<html>
+  <head>
+    <title>CV – Shaheer Hussain</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      /* Keep the PDF responsive-ish */
+      .pdf-frame { width: 100%; height: 80vh; border: none; }
+      .pdf-wrapper { display: grid; gap: 1.25rem; }
+      .pdf-actions .button + .button { margin-left: .5rem; }
+      @media (max-width: 736px) { .pdf-frame { height: 75vh; } }
+    </style>
+  </head>
+  <body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="index.html">Data Analyst Portfolio</a></h1>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <div class="inner">
+          <h2>Menu</h2>
+          <ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="generic.html">About me</a></li>
+								<li><a href="cv.html">Curriculum Vitae</a></li>
+								<li><a href="elements.html">Resources I use</a></li>
+          </ul>
+          <a href="#" class="close">Close</a>
+        </div>
+      </nav>
+
+      <!-- Wrapper -->
+      <section id="wrapper">
+        <header>
+          <div class="inner">
+            <h2>Curriculum Vitae</h2>
+            <p>View or download my CV below. If the preview doesn't load on your browser, use the buttons to open or download it.</p>
+          </div>
+        </header>
+
+        <div class="wrapper">
+          <div class="inner pdf-wrapper">
+
+            <div class="pdf-actions">
+              <a class="button primary icon solid fa-external-link-alt" href="assets\cv\Shaheer_Hussain_Data_Analyst_CV.pdf" target="_blank" rel="noopener">Open in new tab</a>
+              <a class="button icon solid fa-download" href="assets\cv\Shaheer_Hussain_Data_Analyst_CV.pdf" download>Download PDF</a>
+            </div>
+
+            <!-- Native PDF embed -->
+            <object data="assets\cv\Shaheer_Hussain_Data_Analyst_CV.pdf#view=FitH" type="application/pdf" class="pdf-frame">
+              <!-- Fallback if PDFs can't be embedded (older iOS, etc.) -->
+              <iframe src="assets\cv\Shaheer_Hussain_Data_Analyst_CV.pdf#view=FitH" class="pdf-frame" title="CV PDF"></iframe>
+              <p>Your browser can't display embedded PDFs. Please
+                <a href="assets\cv\Shaheer_Hussain_Data_Analyst_CV.pdf" target="_blank" rel="noopener">open the CV in a new tab</a>
+                or <a href="assets\cv\Shaheer_Hussain_Data_Analyst_CV.pdf" download>download it</a>.
+              </p>
+            </object>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer (minimal) -->
+      <section id="footer">
+        <div class="inner">
+          <ul class="copyright">
+            <li>&copy; Portfolio by Shaheer Hussain.</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
