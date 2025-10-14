@@ -1,31 +1,26 @@
-Solid State by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+## Data Analyst Portfolio Website
+
+Welcome to my personal Data Analyst Portfolio Website, a project designed to showcase my work, skills, and journey in data analysis and data science.  
+This site highlights my professional background, projects, and useful resources I’ve gathered throughout my learning.
+
+🌐 Live Website
+You can view the published site here:  
+👉 https://shaheerhussain-datascience.github.io/Portfolio_Website.github.io/  
 
 
-After a somewhat extended break from HTML5 UP (to work on a secret-ish new project --
-more on that later!) I'm back with a brand new design: Solid State, a slick new multi-
-pager that combines some of the ideas I've played with over at Pixelarity with an "angular"
-sort of look. Hope you dig it :)
+## 🚀 Features
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
-
-(* = not included)
-
-AJ
-aj@lkn.io | @ajlkn
+- **Personalised About Me page** – an overview of my studies, experience, and motivation as a data analyst  
+- **Projects showcase** – links to dashboards and data visualisations I’ve built  
+- **Resource hub** – a curated list of useful learning and documentation links for data analysis & data science  
+- **Downloadable CV** – view or download my resume directly  
+- **Responsive design** – mobile and desktop friendly  
 
 
-Credits:
 
-	Demo Images:
-		Unsplash (unsplash.com)
+## 🧠 Technologies Used
 
-	Icons:
-		Font Awesome (fontawesome.io)
+- **HTML5 / CSS3 / JavaScript**
+- **HTML5 UP Solid State Template**
+- **GitHub Pages** (for free hosting and deployment)
 
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
