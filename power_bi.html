@@ -11,14 +11,47 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-      /* Light helpers to create a 2x3 grid that matches the template vibe */
-      .pb-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2rem; }
-      .pb-card { grid-column: span 6; }
-      @media (max-width: 980px) { .pb-card { grid-column: span 12; } }
-      .pb-card .image { display: block; border-radius: 0.5rem; overflow: hidden; }
-      .pb-card .image img { width: 100%; height: auto; display: block; }
-      .pb-card .major { margin-top: 1rem; }
-      .pb-card p { margin: 0.25rem 0 0 0; opacity: 0.9; }
+      /* Create a clean, responsive 2x3 grid layout */
+      .pb-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+      }
+
+      .pb-card {
+        grid-column: span 6;
+      }
+
+      @media (max-width: 980px) {
+        .pb-card {
+          grid-column: span 12;
+        }
+      }
+
+      /* Make all Power BI thumbnails uniform (same size, aligned, clean crop) */
+      .pb-card .image {
+        display: block;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        aspect-ratio: 16 / 9; /* consistent aspect ratio for all tiles */
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .pb-card .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* keeps images neatly cropped and centered */
+        display: block;
+      }
+
+      .pb-card .major {
+        margin-top: 1rem;
+      }
+
+      .pb-card p {
+        margin: 0.25rem 0 0 0;
+        opacity: 0.9;
+      }
     </style>
   </head>
   <body class="is-preload">
