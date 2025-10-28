@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<!--
+  generic.html – About Me + Future Goals + Skills + Certificates
+  Theme: Solid State by HTML5 UP
+-->
+<html>
+  <head>
+    <title>About Me — Shaheer Hussain</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <!-- Custom styling -->
+    <style>
+      /* Certificates grid */
+      .certs-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+      }
+      .cert { grid-column: span 6; }
+      @media (max-width: 980px) { .cert { grid-column: span 12; } }
+
+      .cert .frame {
+        height: 420px;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: .5rem;
+        overflow: hidden;
+        background: rgba(255,255,255,0.03);
+      }
+      .cert .frame object,
+      .cert .frame iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .cert .actions { margin-top: .75rem; }
+
+      /* Skills table */
+      table.skills-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1.5rem;
+        border-radius: 8px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.03);
+      }
+
+      table.skills-table th, table.skills-table td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      table.skills-table th {
+        background: rgba(255,255,255,0.1);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      table.skills-table tr:nth-child(even) {
+        background: rgba(255,255,255,0.05);
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="index.html">Data Analyst Portfolio</a></h1>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <div class="inner">
+          <h2>Menu</h2>
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="generic.html">About me</a></li>
+            <li><a href="cv.html">Curriculum Vitae</a></li>
+            <li><a href="elements.html">Resources I use</a></li>
+            <li><a href="power_bi.html">Power BI Projects</a></li>
+            <li><a href="python.html">Python Projects</a></li>
+            <li><a href="tableau.html">Tableau Projects</a></li>
+          </ul>
+          <a href="#" class="close">Close</a>
+        </div>
+      </nav>
+
+      <!-- Wrapper -->
+      <section id="wrapper">
+        <header>
+          <div class="inner">
+            <h2>About Me</h2>
+            <p>An insight into my background, education, and growth as a data professional.</p>
+          </div>
+        </header>
+
+        <div class="wrapper">
+          <div class="inner">
+
+            <!-- Personal Profile -->
+            <h3 class="major">Personal Profile</h3>
+            <p>Hi! I’m Shaheer Hussain, a Data Analyst Apprentice at the Medicines and Healthcare Products Regulatory Agency (MHRA) and a Digital and Technology Solutions student at ADA, the National College for Digital Skills. I’ve always been curious about how data can tell stories and help people make smarter decisions, which is what drew me into analytics. I love exploring data with tools like Power BI, Tableau, and Python, and finding new ways to turn numbers into clear insights. Whether it’s building dashboards, automating reports, or diving into a tricky dataset, I enjoy solving problems that make an impact.</p>
+
+            <p>During my time at ADA, the National College for Digital Skills, I’ve had the opportunity to study a wide range of modules that have built a strong foundation in both technical and analytical thinking. My learning journey has covered everything from the System Development Lifecycle and User Interface Design, to more data-focused modules such as Statistics for Data Analysis, Database Systems, and Data Analysis Concepts. I’ve developed programming skills through Computer Programming (Python) and Data Analysis in Python, progressing into advanced topics like Artificial Intelligence, Machine Learning, and Big Data Analysis. Alongside these technical areas, modules like Ethics and Commercial Reasoning, Digital Leadership, and Data and Business Insights have helped me understand the broader impact of data in business and society, preparing me to deliver analytical work that’s not only accurate, but also responsible and impactful.</p>
+
+            <!-- Future Goals -->
+            <h3 class="major">Future Goals</h3>
+            <p>My biggest goal right now is to pursue a Master’s degree in Artificial Intelligence and Data Science to deepen my understanding of advanced analytical concepts and emerging technologies. I’m particularly interested in exploring how AI and machine learning can be used to solve real-world problems and drive innovation across industries. By continuing my academic journey, I aim to strengthen both my technical expertise and my ability to translate complex data into meaningful insights that create value and support ethical, data-driven decisions. Ultimately, I want to contribute to projects that make a tangible impact whether that’s improving public services, enhancing business intelligence, or driving forward innovation in data science.</p>
+
+            <!-- Skills -->
+            <h3 class="major">Skills</h3>
+            <table class="skills-table">
+              <thead>
+                <tr>
+                  <th>Skill</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Power BI</td>
+                  <td>Designing and building interactive dashboards and reports to visualise insights and KPIs for business users.</td>
+                </tr>
+                <tr>
+                  <td>MicroStrategy Web and Developer</td>
+                  <td>Developing enterprise-level BI dashboards, managing datasets, and implementing advanced visual analytics.</td>
+                </tr>
+                <tr>
+                  <td>SQL</td>
+                  <td>Writing efficient queries for data extraction, transformation, and analysis from relational databases.</td>
+                </tr>
+                <tr>
+                  <td>Python for Data Analytics</td>
+                  <td>Using libraries such as NumPy, pandas, matplotlib, and seaborn for data wrangling, visualisation, and exploration.</td>
+                </tr>
+                <tr>
+                  <td>Machine Learning and AI (Scikit-Learn)</td>
+                  <td>Building, training, and evaluating machine learning models for predictive and classification problems.</td>
+                </tr>
+                <tr>
+                  <td>Data Cleansing</td>
+                  <td>Identifying and correcting inconsistencies or inaccuracies to improve data quality and reliability.</td>
+                </tr>
+                <tr>
+                  <td>Data Transformation</td>
+                  <td>Preparing and reshaping data using ETL techniques to optimise analysis and modeling workflows.</td>
+                </tr>
+                <tr>
+                  <td>Data Visualisation</td>
+                  <td>Presenting complex datasets through effective visual design to make insights accessible and engaging.</td>
+                </tr>
+                <tr>
+                  <td>Descriptive, Predictive, and Prescriptive Analytics</td>
+                  <td>Applying statistical and machine learning methods to summarise, forecast, and optimise data-driven decisions.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Certificates -->
+            <h3 class="major">Certificates</h3>
+            <div class="certs-grid">
+
+              <!-- Google Data Analytics (Coursera) -->
+              <article class="cert">
+                <h4 class="major">Google Data Analytics – Professional Certificate (Coursera)</h4>
+                <div class="frame">
+                  <object data="assets/certificates/Coursera Google Data Analytics ShaheerHussain.pdf#view=FitH" type="application/pdf">
+                    <iframe src="assets/certificates/Coursera Google Data Analytics ShaheerHussain.pdf#view=FitH" title="Google Data Analytics Certificate"></iframe>
+                  </object>
+                </div>
+                <ul class="actions">
+                  <li><a class="button primary" href="assets/certificates/Coursera Google Data Analytics ShaheerHussain.pdf" target="_blank" rel="noopener">Open in new tab</a></li>
+                  <li><a class="button" href="assets/certificates/Coursera Google Data Analytics ShaheerHussain.pdf" download>Download PDF</a></li>
+                </ul>
+              </article>
+
+              <!-- HarvardX CS109x -->
+              <article class="cert">
+                <h4 class="major">HarvardX – CS109x: Introduction to Data Science with Python</h4>
+                <div class="frame">
+                  <object data="assets/certificates/HarvardX CS109x Certificate _ edX_ShaheerHussain.pdf#view=FitH" type="application/pdf">
+                    <iframe src="assets/certificates/HarvardX CS109x Certificate _ edX_ShaheerHussain.pdf#view=FitH" title="HarvardX CS109x Certificate"></iframe>
+                  </object>
+                </div>
+                <ul class="actions">
+                  <li><a class="button primary" href="assets/certificates/HarvardX CS109x Certificate _ edX_ShaheerHussain.pdf" target="_blank" rel="noopener">Open in new tab</a></li>
+                  <li><a class="button" href="assets/certificates/HarvardX CS109x Certificate _ edX_ShaheerHussain.pdf" download>Download PDF</a></li>
+                </ul>
+              </article>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <section id="footer">
+        <div class="inner">
+          <h2 class="major">Get in touch</h2>
+          <p>Have a question or a project in mind? Drop me a message — I’m always happy to connect and chat about data, analytics, or new ideas.</p>
+
+          <ul class="contact">
+            <li class="icon solid fa-phone">07305355536</li>
+            <li class="icon solid fa-envelope">
+              <a href="mailto:shaheerhussain.datascience@gmail.com">shaheerhussain.datascience@gmail.com</a>
+            </li>
+          </ul>
+
+          <ul class="copyright">
+            <li>&copy; Portfolio by Shaheer Hussain.</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
