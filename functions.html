@@ -1,0 +1,572 @@
+<!DOCTYPE HTML>
+<!--
+  functions.html — Common Functions Cheat-Sheet
+  Theme base: Solid State by HTML5 UP (matching your index.html)
+-->
+<html>
+  <head>
+    <title>Common Functions — Cheat-Sheet</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- Use the same theme files as index.html -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+      /* --------- Page-specific styling (keeps your index background) --------- */
+
+      /* Quick nav buttons */
+      .quick-nav {
+        display: flex; flex-wrap: wrap; gap: .75rem; margin: 0 0 1.25rem 0;
+      }
+      .quick-nav a {
+        text-decoration: none;
+      }
+
+      /* Card look for each library section (match “old” neat tables, on theme bg) */
+      .lib-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        padding: 1.25rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        margin-bottom: 2rem;
+      }
+
+      .lib-title {
+        display: flex; align-items: center; gap: .5rem;
+        margin: 0 0 .5rem 0;
+      }
+      .lib-title h3 { margin: 0; }
+      .badge {
+        display: inline-block;
+        font-size: .8rem;
+        line-height: 1;
+        padding: .35rem .55rem;
+        border-radius: 999px;
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.15);
+        letter-spacing: .02em;
+      }
+
+      /* Wide, neat tables */
+      .table-wrap { overflow-x: auto; border-radius: 12px; }
+      table.cheat {
+        min-width: 1100px; /* keep rows from wrapping in cramped screens */
+        width: 100%;
+        border-collapse: collapse;
+        background: rgba(0,0,0,0.12);
+      }
+      table.cheat thead th {
+        background: rgba(255,255,255,0.06);
+        text-transform: none;
+        letter-spacing: 0;
+        font-weight: 700;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+        padding: 14px 12px;
+      }
+      table.cheat td {
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        vertical-align: top;
+        padding: 12px 12px;
+      }
+      table.cheat tr:nth-child(even) td {
+        background: rgba(255,255,255,0.025);
+      }
+
+      /* Columns */
+      .col-func   { width: 18%; white-space: nowrap; }
+      .col-ex     { width: 40%; }
+      .col-desc   { width: 42%; }
+
+      /* Code chip style for examples */
+      code.inline {
+        display: inline-block;
+        padding: .35rem .55rem;
+        border-radius: 8px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: .95rem;
+        line-height: 1.2;
+        color: #e7edf6;
+      }
+
+      /* Keep section anchors slightly below fixed header jump */
+      .anchor-offset { scroll-margin-top: 90px; }
+
+      /* Minor spacing on section lead */
+      .lead {
+        margin-bottom: .75rem;
+        opacity: .9;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+
+    <!-- Page Wrapper (keep same structure as index) -->
+    <div id="page-wrapper">
+
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="index.html">Data Analyst Portfolio</a></h1>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <div class="inner">
+          <h2>Menu</h2>
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="generic.html">About me</a></li>
+            <li><a href="cv.html">Curriculum Vitae</a></li>
+            <li><a href="elements.html">Resources I use</a></li>
+            <li><a href="functions.html">Functions Cheat-Sheet</a></li>
+          </ul>
+          <a href="#" class="close">Close</a>
+        </div>
+      </nav>
+
+      <!-- Wrapper -->
+      <section id="wrapper">
+        <header>
+          <div class="inner">
+            <h2>Common Functions (Cheat-Sheet)</h2>
+            <p class="lead">
+              Frequently used functions for <strong>NumPy</strong>, <strong>pandas</strong>, <strong>Matplotlib</strong>, <strong>Seaborn</strong>, and <strong>scikit-learn</strong> — with concise examples and what each example is actually doing.
+            </p>
+
+            <!-- Quick Nav -->
+            <div class="quick-nav">
+              <a href="#numpy" class="button primary small">NumPy</a>
+              <a href="#pandas" class="button small">pandas</a>
+              <a href="#matplotlib" class="button small">Matplotlib</a>
+              <a href="#seaborn" class="button small">Seaborn</a>
+              <a href="#sklearn" class="button small">scikit-learn</a>
+            </div>
+          </div>
+        </header>
+
+        <div class="wrapper">
+          <div class="inner">
+
+            <!-- ========== NumPy ========== -->
+            <section id="numpy" class="anchor-offset lib-card">
+              <div class="lib-title">
+                <h3>NumPy</h3>
+                <span class="badge">numpy</span>
+              </div>
+
+              <div class="table-wrap">
+                <table class="cheat">
+                  <thead>
+                    <tr>
+                      <th class="col-func">Function</th>
+                      <th class="col-ex">Example</th>
+                      <th class="col-desc">What this example does</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>np.array</td>
+                      <td><code class="inline">np.array([1, 2, 3])</code></td>
+                      <td>Constructs a NumPy 1-D array from a Python list so you can run fast, vectorised numeric operations on the values.</td>
+                    </tr>
+                    <tr>
+                      <td>np.arange</td>
+                      <td><code class="inline">np.arange(0, 10, 2)</code></td>
+                      <td>Creates integers 0..8 in steps of 2 (0,2,4,6,8). Useful for index ranges, ticks, or generating simple synthetic data.</td>
+                    </tr>
+                    <tr>
+                      <td>np.linspace</td>
+                      <td><code class="inline">np.linspace(0, 1, 5)</code></td>
+                      <td>Generates five evenly spaced points between 0 and 1 (inclusive), ideal for smooth sampling on an interval.</td>
+                    </tr>
+                    <tr>
+                      <td>np.zeros / np.ones</td>
+                      <td><code class="inline">np.zeros((2, 3))</code> &nbsp;|&nbsp; <code class="inline">np.ones(4)</code></td>
+                      <td>Initialises arrays with 0s (placeholders/masks) or 1s (weights/bias starts), without manual loops.</td>
+                    </tr>
+                    <tr>
+                      <td>np.random.rand / randn</td>
+                      <td><code class="inline">np.random.rand(2, 3)</code> &nbsp;|&nbsp; <code class="inline">np.random.randn(3)</code></td>
+                      <td>Draws uniform(0,1) or standard normal samples for simulations, bootstraps, and quick model experiments.</td>
+                    </tr>
+                    <tr>
+                      <td>np.reshape</td>
+                      <td><code class="inline">np.reshape(a, (3, 2))</code></td>
+                      <td>Reinterprets the same data as a 3×2 view without copying — the canonical way to prepare matrices/tensors.</td>
+                    </tr>
+                    <tr>
+                      <td>a.T / np.transpose</td>
+                      <td><code class="inline">a.T</code></td>
+                      <td>Transposes rows and columns (matrix transpose), commonly used before dot products or plotting.</td>
+                    </tr>
+                    <tr>
+                      <td>np.dot</td>
+                      <td><code class="inline">np.dot(a, b)</code></td>
+                      <td>Computes a dot product / matrix multiplication — the backbone of linear algebra and ML internals.</td>
+                    </tr>
+                    <tr>
+                      <td>np.mean / median / std</td>
+                      <td><code class="inline">np.mean(a, axis=0)</code></td>
+                      <td>Aggregates along the chosen axis (here: column-wise mean), often as quick quality checks or feature scaling.</td>
+                    </tr>
+                    <tr>
+                      <td>np.sum / min / max</td>
+                      <td><code class="inline">np.sum(a, axis=1)</code></td>
+                      <td>Row-wise sum (here across columns); min/max variants give bounds for validation and sanity checks.</td>
+                    </tr>
+                    <tr>
+                      <td>np.argmax / argmin</td>
+                      <td><code class="inline">np.argmax(a)</code></td>
+                      <td>Returns the index of the maximum value (e.g., predicted class index from probabilities).</td>
+                    </tr>
+                    <tr>
+                      <td>np.concatenate</td>
+                      <td><code class="inline">np.concatenate([a, b], axis=0)</code></td>
+                      <td>Stacks arrays along an existing axis (here adds rows), handy when batching data.</td>
+                    </tr>
+                    <tr>
+                      <td>np.stack</td>
+                      <td><code class="inline">np.stack([a, b], axis=0)</code></td>
+                      <td>Creates a new axis (here: shape becomes [2, …]) — useful for building mini-batches.</td>
+                    </tr>
+                    <tr>
+                      <td>np.where</td>
+                      <td><code class="inline">np.where(a &gt; 0, 1, 0)</code></td>
+                      <td>Vectorised conditional: converts positives to 1, others to 0, without Python loops.</td>
+                    </tr>
+                    <tr>
+                      <td>np.unique</td>
+                      <td><code class="inline">np.unique(a, return_counts=True)</code></td>
+                      <td>Finds unique values and how often they appear — great for class balance checks.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- ========== pandas ========== -->
+            <section id="pandas" class="anchor-offset lib-card">
+              <div class="lib-title">
+                <h3>pandas</h3>
+                <span class="badge">pd</span>
+              </div>
+
+              <div class="table-wrap">
+                <table class="cheat">
+                  <thead>
+                    <tr>
+                      <th class="col-func">Function</th>
+                      <th class="col-ex">Example</th>
+                      <th class="col-desc">What this example does</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>pd.read_csv</td>
+                      <td><code class="inline">pd.read_csv("data.csv")</code></td>
+                      <td>Loads a CSV into a DataFrame so you can filter, join, aggregate, and visualise tabular data.</td>
+                    </tr>
+                    <tr>
+                      <td>pd.DataFrame</td>
+                      <td><code class="inline">pd.DataFrame({"a":[1,2], "b":[3,4]})</code></td>
+                      <td>Constructs a DataFrame from dict/arrays; great for small examples or unit tests.</td>
+                    </tr>
+                    <tr>
+                      <td>df.head</td>
+                      <td><code class="inline">df.head(5)</code></td>
+                      <td>Previews the first five rows to quickly verify columns, parsing, and obvious issues after loading.</td>
+                    </tr>
+                    <tr>
+                      <td>df.info</td>
+                      <td><code class="inline">df.info()</code></td>
+                      <td>Prints schema: columns, dtypes, non-null counts — your first stop for data quality checks.</td>
+                    </tr>
+                    <tr>
+                      <td>df.describe</td>
+                      <td><code class="inline">df.describe()</code></td>
+                      <td>Generates numeric summary stats (count/mean/std/min/percentiles/max) to profile distributions.</td>
+                    </tr>
+                    <tr>
+                      <td>df.loc / df.iloc</td>
+                      <td><code class="inline">df.loc[df["cat"]=="A", ["x","y"]]</code></td>
+                      <td>Label-based selection (or position-based with <code>iloc</code>) to filter rows and pick columns explicitly.</td>
+                    </tr>
+                    <tr>
+                      <td>df.assign</td>
+                      <td><code class="inline">df.assign(ratio = df["a"]/df["b"])</code></td>
+                      <td>Adds a computed column (here, a/b) in a chainable, immutable style that keeps pipelines tidy.</td>
+                    </tr>
+                    <tr>
+                      <td>df.groupby</td>
+                      <td><code class="inline">df.groupby("cat").agg({"x":"mean", "y":"sum"})</code></td>
+                      <td>Aggregates by category (mean of x, sum of y) — classic split-apply-combine pattern.</td>
+                    </tr>
+                    <tr>
+                      <td>df.merge</td>
+                      <td><code class="inline">df.merge(dim, on="id", how="left")</code></td>
+                      <td>SQL-style join to attach lookup/dimension data; specify <code>how</code> to control inclusion.</td>
+                    </tr>
+                    <tr>
+                      <td>df.pivot_table</td>
+                      <td><code class="inline">df.pivot_table(values="sales", index="month", columns="region", aggfunc="sum")</code></td>
+                      <td>Summarises long data to a matrix by month × region with summed sales — perfect for dashboards.</td>
+                    </tr>
+                    <tr>
+                      <td>df.dropna / df.fillna</td>
+                      <td><code class="inline">df.dropna(subset=["age"])</code> &nbsp;|&nbsp; <code class="inline">df.fillna({"age":0})</code></td>
+                      <td>Removes rows with missing ages or imputes with a specified value; use thoughtfully to avoid bias.</td>
+                    </tr>
+                    <tr>
+                      <td>df.astype</td>
+                      <td><code class="inline">df.astype({"age":"int32"})</code></td>
+                      <td>Converts column dtypes for memory/performance or to satisfy model/visualisation requirements.</td>
+                    </tr>
+                    <tr>
+                      <td>df.sort_values</td>
+                      <td><code class="inline">df.sort_values(["date","sales"], ascending=[True, False])</code></td>
+                      <td>Orders rows by multiple keys (date ascending, then sales descending) for ranked outputs.</td>
+                    </tr>
+                    <tr>
+                      <td>pd.to_datetime</td>
+                      <td><code class="inline">pd.to_datetime(df["timestamp"], utc=True)</code></td>
+                      <td>Parses strings to timezone-aware datetimes so you can resample, window, and plot time series correctly.</td>
+                    </tr>
+                    <tr>
+                      <td>df.set_index / resample</td>
+                      <td><code class="inline">df.set_index("date").resample("W").sum()</code></td>
+                      <td>Promotes the date to index and groups data weekly, aggregating numeric columns — ideal for trends.</td>
+                    </tr>
+                    <tr>
+                      <td>df.value_counts</td>
+                      <td><code class="inline">df["cat"].value_counts(normalize=True)</code></td>
+                      <td>Computes class distribution (with <code>normalize</code> for proportions) to check balance or drift.</td>
+                    </tr>
+                    <tr>
+                      <td>df.to_csv</td>
+                      <td><code class="inline">df.to_csv("out.csv", index=False)</code></td>
+                      <td>Writes a clean CSV (without index) for sharing, downstream tools, or Git-tracked artefacts.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- ========== Matplotlib ========== -->
+            <section id="matplotlib" class="anchor-offset lib-card">
+              <div class="lib-title">
+                <h3>Matplotlib</h3>
+                <span class="badge">plt</span>
+              </div>
+
+              <div class="table-wrap">
+                <table class="cheat">
+                  <thead>
+                    <tr>
+                      <th class="col-func">Function</th>
+                      <th class="col-ex">Example</th>
+                      <th class="col-desc">What this example does</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>plt.figure / subplots</td>
+                      <td><code class="inline">fig, ax = plt.subplots(figsize=(6,4))</code></td>
+                      <td>Creates a figure and a single axes object to follow the OO style, which scales best for complex charts.</td>
+                    </tr>
+                    <tr>
+                      <td>plt.plot</td>
+                      <td><code class="inline">ax.plot(x, y, linewidth=2)</code></td>
+                      <td>Draws a line series on the axes; thicker line for emphasis in time-series or trend views.</td>
+                    </tr>
+                    <tr>
+                      <td>plt.scatter</td>
+                      <td><code class="inline">ax.scatter(x, y, alpha=.7)</code></td>
+                      <td>Plots points with transparency to reveal dense regions; use for relationships/outliers.</td>
+                    </tr>
+                    <tr>
+                      <td>plt.bar</td>
+                      <td><code class="inline">ax.bar(cats, vals)</code></td>
+                      <td>Creates a vertical bar chart for categorical comparisons.</td>
+                    </tr>
+                    <tr>
+                      <td>plt.hist</td>
+                      <td><code class="inline">ax.hist(x, bins=30)</code></td>
+                      <td>Shows distribution shape; choose bins to reveal modality while avoiding noise.</td>
+                    </tr>
+                    <tr>
+                      <td>Styling</td>
+                      <td><code class="inline">ax.set_title("Sales"); ax.set_xlabel("Month"); ax.grid(True)</code></td>
+                      <td>Sets title/labels and enables a grid for readability; central to professional-looking plots.</td>
+                    </tr>
+                    <tr>
+                      <td>Layout & export</td>
+                      <td><code class="inline">fig.tight_layout(); fig.savefig("fig.png", dpi=300)</code></td>
+                      <td>Fixes overlaps and exports a crisp image suitable for slides/reports.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- ========== Seaborn ========== -->
+            <section id="seaborn" class="anchor-offset lib-card">
+              <div class="lib-title">
+                <h3>Seaborn</h3>
+                <span class="badge">sns</span>
+              </div>
+
+              <div class="table-wrap">
+                <table class="cheat">
+                  <thead>
+                    <tr>
+                      <th class="col-func">Function</th>
+                      <th class="col-ex">Example</th>
+                      <th class="col-desc">What this example does</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>sns.scatterplot</td>
+                      <td><code class="inline">sns.scatterplot(data=df, x="x", y="y", hue="cat")</code></td>
+                      <td>Encodes category by colour, making clusters or class separation instantly visible.</td>
+                    </tr>
+                    <tr>
+                      <td>sns.lineplot</td>
+                      <td><code class="inline">sns.lineplot(data=df, x="date", y="value")</code></td>
+                      <td>Plots time-series with confidence intervals (if present), ideal for trends with uncertainty.</td>
+                    </tr>
+                    <tr>
+                      <td>sns.barplot / countplot</td>
+                      <td><code class="inline">sns.barplot(data=df, x="cat", y="val")</code> | <code class="inline">sns.countplot(x="cat", data=df)</code></td>
+                      <td>Shows category means with error bars (barplot) or raw counts (countplot).</td>
+                    </tr>
+                    <tr>
+                      <td>sns.boxplot / violinplot</td>
+                      <td><code class="inline">sns.boxplot(data=df, x="cat", y="val")</code></td>
+                      <td>Compares distributions across categories; violinplot reveals full density shape.</td>
+                    </tr>
+                    <tr>
+                      <td>sns.heatmap</td>
+                      <td><code class="inline">sns.heatmap(df.corr(), annot=True, cmap="Blues")</code></td>
+                      <td>Visualises correlation structure; annotation shows exact coefficients for quick readouts.</td>
+                    </tr>
+                    <tr>
+                      <td>sns.pairplot</td>
+                      <td><code class="inline">sns.pairplot(df, hue="species")</code></td>
+                      <td>Creates a scatter-matrix to explore relationships and separability across many variables.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- ========== scikit-learn ========== -->
+            <section id="sklearn" class="anchor-offset lib-card">
+              <div class="lib-title">
+                <h3>scikit-learn</h3>
+                <span class="badge">sklearn</span>
+              </div>
+
+              <div class="table-wrap">
+                <table class="cheat">
+                  <thead>
+                    <tr>
+                      <th class="col-func">Function</th>
+                      <th class="col-ex">Example</th>
+                      <th class="col-desc">What this example does</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>train_test_split</td>
+                      <td><code class="inline">X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, random_state=42)</code></td>
+                      <td>Splits features/labels into training and hold-out sets to evaluate generalisation fairly.</td>
+                    </tr>
+                    <tr>
+                      <td>StandardScaler</td>
+                      <td><code class="inline">scaler = StandardScaler().fit(X_tr); Xs = scaler.transform(X_tr)</code></td>
+                      <td>Centers and scales features (mean 0, var 1) so many models converge faster and perform better.</td>
+                    </tr>
+                    <tr>
+                      <td>ColumnTransformer</td>
+                      <td><code class="inline">ct = ColumnTransformer([("num", StandardScaler(), num_cols), ("cat", OneHotEncoder(), cat_cols)])</code></td>
+                      <td>Applies the right preprocessing to each column subset within one object — robust and reusable.</td>
+                    </tr>
+                    <tr>
+                      <td>Pipeline</td>
+                      <td><code class="inline">pipe = Pipeline([("prep", ct), ("clf", LogisticRegression(max_iter=1000))])</code></td>
+                      <td>Chains preprocessing and model so CV and grid search treat everything as one unit (no leakage).</td>
+                    </tr>
+                    <tr>
+                      <td>RandomForestClassifier</td>
+                      <td><code class="inline">rf = RandomForestClassifier(n_estimators=300, random_state=0).fit(X_tr, y_tr)</code></td>
+                      <td>Fits an ensemble of decision trees that reduce variance; strong baseline for tabular data.</td>
+                    </tr>
+                    <tr>
+                      <td>GridSearchCV</td>
+                      <td><code class="inline">GridSearchCV(pipe, {"clf__C":[0.1,1,10]}, cv=5, n_jobs=-1)</code></td>
+                      <td>Searches hyperparameters via cross-validation while respecting the full preprocessing pipeline.</td>
+                    </tr>
+                    <tr>
+                      <td>classification_report</td>
+                      <td><code class="inline">print(classification_report(y_te, y_pred))</code></td>
+                      <td>Prints precision/recall/F1 per class + macro/weighted averages to understand model trade-offs.</td>
+                    </tr>
+                    <tr>
+                      <td>confusion_matrix</td>
+                      <td><code class="inline">ConfusionMatrixDisplay.from_predictions(y_te, y_pred)</code></td>
+                      <td>Shows counts per true/predicted class so you can spot where errors concentrate.</td>
+                    </tr>
+                    <tr>
+                      <td>mean_squared_error</td>
+                      <td><code class="inline">rmse = mean_squared_error(y_te, y_hat, squared=False)</code></td>
+                      <td>Computes RMSE for regression (same units as target), easier to interpret than raw MSE.</td>
+                    </tr>
+                    <tr>
+                      <td>model.score</td>
+                      <td><code class="inline">pipe.score(X_te, y_te)</code></td>
+                      <td>Returns default score (accuracy/R²) for quick checks — still validate with richer metrics above.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer (optional; can mirror index footer if you use one) -->
+      <section id="footer">
+        <div class="inner">
+          <h2 class="major">Get in touch</h2>
+          <p>If you have any enquiries about the work I do, please feel free to reach out.</p>
+          <ul class="contact">
+            <li class="icon solid fa-phone">07305355536</li>
+            <li class="icon solid fa-envelope">
+              <a href="mailto:shaheerhussain.datascience@gmail.com">shaheerhussain.datascience@gmail.com</a>
+            </li>
+          </ul>
+          <ul class="copyright">
+            <li>&copy; Portfolio by Shaheer Hussain.</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Scripts (same as index) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
