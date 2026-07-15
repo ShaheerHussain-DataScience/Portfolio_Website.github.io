@@ -36,6 +36,234 @@
   display: block;
 }
 
+/* Project detail tags */
+.pb-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.pb-tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.pb-tag.supervised { background: rgba(94, 158, 255, 0.15); color: #7fb2ff; border-color: rgba(94, 158, 255, 0.4); }
+.pb-tag.unsupervised { background: rgba(186, 122, 255, 0.15); color: #c69bff; border-color: rgba(186, 122, 255, 0.4); }
+.pb-tag.classification { background: rgba(80, 214, 138, 0.15); color: #6fe0a8; border-color: rgba(80, 214, 138, 0.4); }
+.pb-tag.regression { background: rgba(255, 170, 60, 0.15); color: #ffbf70; border-color: rgba(255, 170, 60, 0.4); }
+.pb-tag.clustering { background: rgba(255, 105, 180, 0.15); color: #ff8fc0; border-color: rgba(255, 105, 180, 0.4); }
+.pb-tag.eda { background: rgba(160, 174, 192, 0.15); color: #b9c4d1; border-color: rgba(160, 174, 192, 0.4); }
+.pb-tag.imbalanced { background: rgba(255, 90, 90, 0.15); color: #ff8f8f; border-color: rgba(255, 90, 90, 0.4); }
+.pb-tag.predictive { background: rgba(120, 200, 255, 0.15); color: #8fd4ff; border-color: rgba(120, 200, 255, 0.4); }
+
+/* Filter bar */
+.pb-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1.5rem 0 0 0;
+}
+
+.pb-filter-btn {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+  background: transparent;
+  font-family: inherit;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.pb-filter-btn:hover { transform: translateY(-1px); }
+
+.pb-filter-btn.supervised { color: #7fb2ff; border: 1px solid rgba(94, 158, 255, 0.4); }
+.pb-filter-btn.supervised.active { background: #7fb2ff; color: #10151c; border-color: #7fb2ff; }
+
+.pb-filter-btn.unsupervised { color: #c69bff; border: 1px solid rgba(186, 122, 255, 0.4); }
+.pb-filter-btn.unsupervised.active { background: #c69bff; color: #10151c; border-color: #c69bff; }
+
+.pb-filter-btn.classification { color: #6fe0a8; border: 1px solid rgba(80, 214, 138, 0.4); }
+.pb-filter-btn.classification.active { background: #6fe0a8; color: #10151c; border-color: #6fe0a8; }
+
+.pb-filter-btn.regression { color: #ffbf70; border: 1px solid rgba(255, 170, 60, 0.4); }
+.pb-filter-btn.regression.active { background: #ffbf70; color: #10151c; border-color: #ffbf70; }
+
+.pb-filter-btn.clustering { color: #ff8fc0; border: 1px solid rgba(255, 105, 180, 0.4); }
+.pb-filter-btn.clustering.active { background: #ff8fc0; color: #10151c; border-color: #ff8fc0; }
+
+.pb-filter-btn.eda { color: #b9c4d1; border: 1px solid rgba(160, 174, 192, 0.4); }
+.pb-filter-btn.eda.active { background: #b9c4d1; color: #10151c; border-color: #b9c4d1; }
+
+.pb-filter-btn.imbalanced { color: #ff8f8f; border: 1px solid rgba(255, 90, 90, 0.4); }
+.pb-filter-btn.imbalanced.active { background: #ff8f8f; color: #10151c; border-color: #ff8f8f; }
+
+.pb-filter-btn.predictive { color: #8fd4ff; border: 1px solid rgba(120, 200, 255, 0.4); }
+.pb-filter-btn.predictive.active { background: #8fd4ff; color: #10151c; border-color: #8fd4ff; }
+
+.pb-filter-clear {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-family: inherit;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.pb-filter-clear:hover { opacity: 1; transform: translateY(-1px); }
+.pb-filter-clear.is-active { opacity: 1; background: rgba(255, 255, 255, 0.12); }
+
+.pb-card.is-hidden { display: none; }
+
+/* Search + results row */
+.pb-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.pb-search-wrap {
+  position: relative;
+  flex: 1 1 260px;
+  max-width: 360px;
+}
+
+.pb-search-wrap svg {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.pb-search {
+  width: 100%;
+  padding: 0.6rem 0.9rem 0.6rem 2.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.pb-search::placeholder { color: rgba(255, 255, 255, 0.45); }
+.pb-search:focus { border-color: rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.08); }
+
+.pb-results-count {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+/* Empty state */
+.pb-empty-state {
+  display: none;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  opacity: 0.7;
+}
+
+.pb-empty-state.is-visible { display: block; }
+.pb-empty-state p { margin: 0.25rem 0; }
+.pb-empty-state .pb-empty-emoji { font-size: 2rem; display: block; margin-bottom: 0.75rem; }
+
+/* Tech stack badges */
+.pb-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.pb-stack span {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.68rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Hover overlay on thumbnails */
+.pb-card .image { position: relative; }
+
+.pb-card .image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 20, 0.72);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.pb-card .image .pb-view-cta {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 1;
+}
+
+.pb-card .image:hover::after { opacity: 1; }
+.pb-card .image:hover .pb-view-cta { opacity: 1; transform: translateY(0); }
+.pb-card .image img { transition: transform 0.35s ease; }
+.pb-card .image:hover img { transform: scale(1.05); }
+
+/* Scroll-in animation */
+.pb-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.pb-card.pb-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 </style>
   </head>
   <body class="is-preload">
@@ -71,6 +299,26 @@
           <div class="inner">
             <h2>My Python Dashboard Projects</h2>
             <p>A curated collection some of my Python dashboards. Click into a section to explore the work.</p>
+
+            <div class="pb-filter-bar" id="pb-filter-bar">
+              <span class="pb-filter-btn supervised" data-filter="Supervised Learning">Supervised Learning</span>
+              <span class="pb-filter-btn unsupervised" data-filter="Unsupervised Learning">Unsupervised Learning</span>
+              <span class="pb-filter-btn classification" data-filter="Classification">Classification</span>
+              <span class="pb-filter-btn regression" data-filter="Regression">Regression</span>
+              <span class="pb-filter-btn clustering" data-filter="Clustering">Clustering</span>
+              <span class="pb-filter-btn predictive" data-filter="Predictive Modeling">Predictive Modeling</span>
+              <span class="pb-filter-btn eda" data-filter="EDA">EDA</span>
+              <span class="pb-filter-btn imbalanced" data-filter="Imbalanced Data">Imbalanced Data</span>
+              <span class="pb-filter-clear" id="pb-filter-clear">Clear Filters</span>
+            </div>
+
+            <div class="pb-controls-row">
+              <div class="pb-search-wrap">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" class="pb-search" id="pb-search" placeholder="Search projects..." aria-label="Search projects" />
+              </div>
+              <span class="pb-results-count" id="pb-results-count">Showing 6 of 6 projects</span>
+            </div>
           </div>
         </header>
 
@@ -78,47 +326,114 @@
         <div class="wrapper">
           <div class="inner">
 
-            <div class="pb-grid">
-              <!-- Card 1 -->
-              <article class="pb-card">
-                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio/tree/main/Python/DEC23%20-%20Data%20Analysis%20with%20Python%20ADA%20Module" class="image"><img src="images/DA_Python_W2.png" alt="Python project thumbnail" /></a>
+            <div class="pb-grid" id="pb-grid">
+              <div class="pb-empty-state" id="pb-empty-state">
+                <span class="pb-empty-emoji">🔍</span>
+                <p><strong>No projects match your filters.</strong></p>
+                <p>Try clearing a filter or searching a different term.</p>
+              </div>
+<article class="pb-card" data-tags="Supervised Learning,Classification,EDA">
+                <!-- Card 1 -->
+                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio/tree/main/Python/DEC23%20-%20Data%20Analysis%20with%20Python%20ADA%20Module" class="image" target="_blank" rel="noopener">
+                  <img src="images/DA_Python_W2.png" alt="Python project thumbnail" />
+                  <span class="pb-view-cta">View on GitHub ↗</span>
+                </a>
                 <h3 class="major">Titanic Python Project</h3>
                 <p>This is a Python project that explores the famous Titanic Dataset.</p>
+                <div class="pb-tags">
+                  <span class="pb-tag supervised">Supervised Learning</span>
+                  <span class="pb-tag classification">Classification</span>
+                  <span class="pb-tag eda">EDA</span>
+                </div>
+                <div class="pb-stack">
+                  <span>pandas</span><span>numpy</span><span>matplotlib</span><span>scikit-learn</span>
+                </div>
               </article>
 
               <!-- Card 2 -->
-              <article class="pb-card">
-                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio/tree/main/Python/FEB25%20-%20Machine%20Learning%20ADA%20Module" class="image"><img src="images/ML_python.png" alt="Python project thumbnail" /></a>
+              <article class="pb-card" data-tags="Supervised Learning,Predictive Modeling">
+                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio/tree/main/Python/FEB25%20-%20Machine%20Learning%20ADA%20Module" class="image" target="_blank" rel="noopener">
+                  <img src="images/ML_python.png" alt="Python project thumbnail" />
+                  <span class="pb-view-cta">View on GitHub ↗</span>
+                </a>
                 <h3 class="major">Pharmatech Python Project</h3>
                 <p>This is a Python project around PharmaTech who aims to create a Predictive model.</p>
+                <div class="pb-tags">
+                  <span class="pb-tag supervised">Supervised Learning</span>
+                  <span class="pb-tag predictive">Predictive Modeling</span>
+                </div>
+                <div class="pb-stack">
+                  <span>pandas</span><span>numpy</span><span>scikit-learn</span>
+                </div>
               </article>
 
               <!-- Card 3 -->
-              <article class="pb-card">
-                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio/tree/main/Python/CaliforniaHousing_ML" class="image"><img src="images/Figure_1_AVPLR.png" alt="Python project thumbnail" /></a>
+              <article class="pb-card" data-tags="Supervised Learning,Regression">
+                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio/tree/main/Python/CaliforniaHousing_ML" class="image" target="_blank" rel="noopener">
+                  <img src="images/Figure_1_AVPLR.png" alt="Python project thumbnail" />
+                  <span class="pb-view-cta">View on GitHub ↗</span>
+                </a>
                 <h3 class="major">California Housing ML</h3>
                 <p>This is just a small Python code to simplyfy using multiple ML algorithms on a basic dataset with some useful visuals to interpret the models performance against each other.</p>
+                <div class="pb-tags">
+                  <span class="pb-tag supervised">Supervised Learning</span>
+                  <span class="pb-tag regression">Regression</span>
+                </div>
+                <div class="pb-stack">
+                  <span>pandas</span><span>scikit-learn</span><span>matplotlib</span>
+                </div>
               </article>
 
               <!-- Card 4 -->
-              <article class="pb-card">
-                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio/tree/main/Python/Diabetes_ML" class="image"><img src="images/DiabetesML.png" alt="Python project thumbnail" /></a>
+              <article class="pb-card" data-tags="Supervised Learning,Regression">
+                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio/tree/main/Python/Diabetes_ML" class="image" target="_blank" rel="noopener">
+                  <img src="images/DiabetesML.png" alt="Python project thumbnail" />
+                  <span class="pb-view-cta">View on GitHub ↗</span>
+                </a>
                 <h3 class="major">Diabetes Regression ML</h3>
                 <p>A regression project comparing Linear Regression, Random Forest, Gradient Boosting, and Ridge models on scikit-learn's diabetes dataset to predict disease progression, finding that plain Linear Regression performs best due to the dataset's largely linear signal.</p>
+                <div class="pb-tags">
+                  <span class="pb-tag supervised">Supervised Learning</span>
+                  <span class="pb-tag regression">Regression</span>
+                </div>
+                <div class="pb-stack">
+                  <span>pandas</span><span>numpy</span><span>scikit-learn</span><span>matplotlib</span>
+                </div>
               </article>
 
               <!-- Card 5 -->
-              <article class="pb-card">
-                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio/tree/main/Python/CreditCardML" class="image"><img src="images/CC_Classification.png" alt="Python project thumbnail" /></a>
+              <article class="pb-card" data-tags="Supervised Learning,Classification,Imbalanced Data">
+                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio/tree/main/Python/CreditCardML" class="image" target="_blank" rel="noopener">
+                  <img src="images/CC_Classification.png" alt="Python project thumbnail" />
+                  <span class="pb-view-cta">View on GitHub ↗</span>
+                </a>
                 <h3 class="major">Credit Card Fraud Classification ML</h3>
                 <p>Binary classification project detecting fraudulent credit card transactions from anonymized PCA-transformed features, comparing tuned Logistic Regression, Random Forest, and XGBoost models under severe class imbalance (~0.17% fraud).</p>
+                <div class="pb-tags">
+                  <span class="pb-tag supervised">Supervised Learning</span>
+                  <span class="pb-tag classification">Classification</span>
+                  <span class="pb-tag imbalanced">Imbalanced Data</span>
+                </div>
+                <div class="pb-stack">
+                  <span>pandas</span><span>scikit-learn</span><span>xgboost</span>
+                </div>
               </article>
 
               <!-- Card 6 -->
-              <article class="pb-card">
-                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio" class="image"><img src="images/CustomerSegmentationVis.png" alt="Python project thumbnail" /></a>
+              <article class="pb-card" data-tags="Unsupervised Learning,Clustering">
+                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio" class="image" target="_blank" rel="noopener">
+                  <img src="images/CustomerSegmentationVis.png" alt="Python project thumbnail" />
+                  <span class="pb-view-cta">View on GitHub ↗</span>
+                </a>
                 <h3 class="major">Customer Segmentation using K-Means Clustering</h3>
                 <p>This project uses K-Means clustering on mall customer data to segment shoppers into distinct groups based on age, annual income, and spending score, using the elbow method to determine the optimal number of clusters and visualizing the resulting segments in 2D and 3D scatter plots.</p>
+                <div class="pb-tags">
+                  <span class="pb-tag unsupervised">Unsupervised Learning</span>
+                  <span class="pb-tag clustering">Clustering</span>
+                </div>
+                <div class="pb-stack">
+                  <span>pandas</span><span>scikit-learn</span><span>matplotlib</span><span>seaborn</span>
+                </div>
               </article>
             </div>
 
@@ -157,5 +472,93 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Project tag filtering, search, and scroll animation -->
+    <script>
+      (function () {
+        var activeFilters = new Set();
+        var filterBtns = document.querySelectorAll('.pb-filter-btn');
+        var clearBtn = document.getElementById('pb-filter-clear');
+        var cards = Array.prototype.slice.call(document.querySelectorAll('.pb-card'));
+        var searchInput = document.getElementById('pb-search');
+        var resultsCount = document.getElementById('pb-results-count');
+        var emptyState = document.getElementById('pb-empty-state');
+        var totalCount = cards.length;
+
+        function cardSearchText(card) {
+          var title = card.querySelector('.major');
+          var desc = card.querySelector('p');
+          return ((title ? title.textContent : '') + ' ' + (desc ? desc.textContent : '')).toLowerCase();
+        }
+
+        function applyFilters() {
+          var query = (searchInput.value || '').trim().toLowerCase();
+          var visibleCount = 0;
+
+          cards.forEach(function (card) {
+            var cardTags = (card.getAttribute('data-tags') || '').split(',').map(function (t) { return t.trim(); });
+            var matchesTags = activeFilters.size === 0 || cardTags.some(function (tag) {
+              return activeFilters.has(tag);
+            });
+            var matchesSearch = query === '' || cardSearchText(card).indexOf(query) !== -1;
+            var visible = matchesTags && matchesSearch;
+
+            card.classList.toggle('is-hidden', !visible);
+            if (visible) visibleCount++;
+          });
+
+          clearBtn.classList.toggle('is-active', activeFilters.size > 0 || query !== '');
+          emptyState.classList.toggle('is-visible', visibleCount === 0);
+          resultsCount.textContent = 'Showing ' + visibleCount + ' of ' + totalCount + ' projects';
+        }
+
+        filterBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var tag = btn.getAttribute('data-filter');
+            if (activeFilters.has(tag)) {
+              activeFilters.delete(tag);
+              btn.classList.remove('active');
+            } else {
+              activeFilters.add(tag);
+              btn.classList.add('active');
+            }
+            applyFilters();
+          });
+        });
+
+        clearBtn.addEventListener('click', function () {
+          activeFilters.clear();
+          searchInput.value = '';
+          filterBtns.forEach(function (btn) {
+            btn.classList.remove('active');
+          });
+          applyFilters();
+        });
+
+        searchInput.addEventListener('input', applyFilters);
+
+        applyFilters();
+
+        // Scroll-in fade/slide animation
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('pb-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.15 });
+
+          cards.forEach(function (card) {
+            observer.observe(card);
+          });
+        } else {
+          cards.forEach(function (card) {
+            card.classList.add('pb-visible');
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
