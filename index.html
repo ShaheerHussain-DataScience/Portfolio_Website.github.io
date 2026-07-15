@@ -120,6 +120,32 @@
 			}
 
 			.cert-lightbox-close:hover { background: rgba(255, 255, 255, 0.2); }
+
+			/* Glow-on-hover for circular thumbnails (spotlight + skills sections) */
+			.spotlight .image,
+			.features article .image {
+				position: relative;
+				border-radius: 50%;
+				transition: transform 0.35s ease, box-shadow 0.35s ease;
+			}
+
+			.spotlight .image img,
+			.features article .image img {
+				transition: filter 0.35s ease;
+			}
+
+			.spotlight .image:hover,
+			.features article .image:hover {
+				transform: scale(1.06);
+				box-shadow:
+					0 0 20px 4px rgba(255, 255, 255, 0.35),
+					0 0 45px 14px rgba(120, 170, 255, 0.35);
+			}
+
+			.spotlight .image:hover img,
+			.features article .image:hover img {
+				filter: brightness(1.08);
+			}
 		</style>
 	</head>
 	<body class="is-preload">
