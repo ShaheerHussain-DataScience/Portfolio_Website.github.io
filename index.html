@@ -11,6 +11,116 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.cert-row {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 2rem;
+				margin-top: 2rem;
+			}
+
+			.cert-card {
+				width: 460px;
+				max-width: 100%;
+				border-radius: 0.5rem;
+				overflow: hidden;
+				background: #fff;
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				transition: transform 0.25s ease, box-shadow 0.25s ease;
+				cursor: zoom-in;
+			}
+
+			.cert-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+			}
+
+			.cert-card .cert-image {
+				width: 100%;
+				aspect-ratio: 4 / 3;
+				background: #fff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.cert-card .cert-image img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+
+			.cert-card .cert-zoom-hint {
+				position: absolute;
+				bottom: 0.6rem;
+				right: 0.6rem;
+				background: rgba(0, 0, 0, 0.6);
+				color: #fff;
+				border-radius: 999px;
+				width: 2rem;
+				height: 2rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0;
+				transition: opacity 0.2s ease;
+			}
+
+			.cert-card:hover .cert-zoom-hint { opacity: 1; }
+
+			.cert-note {
+				text-align: center;
+				font-size: 0.8rem;
+				opacity: 0.6;
+				margin-top: 1rem;
+			}
+
+			/* Lightbox */
+			.cert-lightbox {
+				display: none;
+				position: fixed;
+				inset: 0;
+				background: rgba(0, 0, 0, 0.88);
+				z-index: 9999;
+				align-items: center;
+				justify-content: center;
+				padding: 2rem;
+			}
+
+			.cert-lightbox.is-open { display: flex; }
+
+			.cert-lightbox img {
+				max-width: 90vw;
+				max-height: 88vh;
+				border-radius: 0.5rem;
+				box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+				background: #fff;
+			}
+
+			.cert-lightbox-close {
+				position: absolute;
+				top: 1.5rem;
+				right: 1.5rem;
+				width: 2.75rem;
+				height: 2.75rem;
+				border-radius: 50%;
+				background: rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				color: #fff;
+				font-size: 1.3rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				transition: background 0.2s ease;
+			}
+
+			.cert-lightbox-close:hover { background: rgba(255, 255, 255, 0.2); }
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -43,10 +153,26 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<div class="logo"><span class="icon fa-gem"></span></div>
+							<!--<div class="logo"><span class="icon fa-gem"></span></div>-->
 							<h2>Shaheer Hussain - Data Analyst Portfolio</h2>
-							<p>Experienced Data Analyst Working for MHRA and Studying at ADA, National college for digital skills to achieve a BSc (Hons) in Digital and Technology Solutions (2025), studied a "Google" Data analytics course hosted by Coursera and a "CS109x : Introduction to Data 
-								science with Python" provided by HarvardX. I'm skilled in Power BI, Tableau and MicroStrategy Business intelligence tools and have experience using SQL and Python for data analysis tasks.</p>
+							<p>Data analyst with <span id="years-exp">4</span> years of experience - Studied at Ada National college for digital skills to achieve a 1st Class BSc (Hons) in Digital and Technology Solutions (2026), completed a "Google" Data analytics course hosted by Coursera and a Harvard "CS109x : Introduction to Data 
+								science with Python". I am skilled in Power BI and MicroStrategy Business intelligence tools and have experience using SQL and Python for data analysis tasks like data cleansing, data transformation and data visualisation.</p>
+
+							<div class="cert-row">
+								<div class="cert-card" data-cert-src="images/HarvardCert.png" data-cert-alt="HarvardX Verified Certificate - CS109x: Introduction to Data Science with Python">
+									<div class="cert-image">
+										<img src="images/HarvardCert.png" alt="HarvardX Verified Certificate - CS109x: Introduction to Data Science with Python" />
+										<span class="cert-zoom-hint">⤢</span>
+									</div>
+								</div>
+								<div class="cert-card" data-cert-src="images/GoogleCert.png" data-cert-alt="Google Data Analytics Professional Certificate">
+									<div class="cert-image">
+										<img src="images/GoogleCert.png" alt="Google Data Analytics Professional Certificate" />
+										<span class="cert-zoom-hint">⤢</span>
+									</div>
+								</div>
+							</div>
+							<p class="cert-note">Certificate IDs have been censored for security reasons. Click a certificate to enlarge.</p>
 						</div>
 					</section>
 
@@ -160,6 +286,12 @@
 
 			</div>
 
+			<!-- Certificate Lightbox -->
+			<div class="cert-lightbox" id="cert-lightbox">
+				<span class="cert-lightbox-close" id="cert-lightbox-close">&times;</span>
+				<img src="" alt="" id="cert-lightbox-img" />
+			</div>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -167,6 +299,57 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- Certificate lightbox -->
+			<script>
+				(function () {
+					var lightbox = document.getElementById('cert-lightbox');
+					var lightboxImg = document.getElementById('cert-lightbox-img');
+					var closeBtn = document.getElementById('cert-lightbox-close');
+					var certCards = document.querySelectorAll('.cert-card');
+
+					function openLightbox(src, alt) {
+						lightboxImg.src = src;
+						lightboxImg.alt = alt || '';
+						lightbox.classList.add('is-open');
+						document.body.style.overflow = 'hidden';
+					}
+
+					function closeLightbox() {
+						lightbox.classList.remove('is-open');
+						document.body.style.overflow = '';
+						lightboxImg.src = '';
+					}
+
+					certCards.forEach(function (card) {
+						card.addEventListener('click', function () {
+							openLightbox(card.getAttribute('data-cert-src'), card.getAttribute('data-cert-alt'));
+						});
+					});
+
+					closeBtn.addEventListener('click', closeLightbox);
+
+					lightbox.addEventListener('click', function (e) {
+						if (e.target === lightbox) closeLightbox();
+					});
+
+					document.addEventListener('keydown', function (e) {
+						if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+					});
+				})();
+			</script>
+
+			<!-- Dynamic years of experience -->
+			<script>
+				(function () {
+					var startYear = 2022;
+					var yearsEl = document.getElementById('years-exp');
+					if (yearsEl) {
+						var years = new Date().getFullYear() - startYear;
+						yearsEl.textContent = years;
+					}
+				})();
+			</script>
 
 	</body>
 
