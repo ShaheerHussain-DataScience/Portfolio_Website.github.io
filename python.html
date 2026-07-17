@@ -65,6 +65,7 @@
 .pb-tag.eda { background: rgba(160, 174, 192, 0.15); color: #b9c4d1; border-color: rgba(160, 174, 192, 0.4); }
 .pb-tag.imbalanced { background: rgba(255, 90, 90, 0.15); color: #ff8f8f; border-color: rgba(255, 90, 90, 0.4); }
 .pb-tag.predictive { background: rgba(120, 200, 255, 0.15); color: #8fd4ff; border-color: rgba(120, 200, 255, 0.4); }
+.pb-tag.reinforcement { background: rgba(45, 212, 191, 0.15); color: #5eead4; border-color: rgba(45, 212, 191, 0.4); }
 
 /* Filter bar */
 .pb-filter-bar {
@@ -115,6 +116,9 @@
 
 .pb-filter-btn.predictive { color: #8fd4ff; border: 1px solid rgba(120, 200, 255, 0.4); }
 .pb-filter-btn.predictive.active { background: #8fd4ff; color: #10151c; border-color: #8fd4ff; }
+
+.pb-filter-btn.reinforcement { color: #5eead4; border: 1px solid rgba(45, 212, 191, 0.4); }
+.pb-filter-btn.reinforcement.active { background: #5eead4; color: #10151c; border-color: #5eead4; }
 
 .pb-filter-clear {
   display: inline-block;
@@ -310,6 +314,7 @@
               <span class="pb-filter-btn predictive" data-filter="Predictive Modeling">Predictive Modeling</span>
               <span class="pb-filter-btn eda" data-filter="EDA">EDA</span>
               <span class="pb-filter-btn imbalanced" data-filter="Imbalanced Data">Imbalanced Data</span>
+              <span class="pb-filter-btn reinforcement" data-filter="Reinforcement Learning">Reinforcement Learning</span>
               <span class="pb-filter-clear" id="pb-filter-clear">Clear Filters</span>
             </div>
 
@@ -469,6 +474,22 @@
                 </div>
                 <div class="pb-stack">
                   <span>pandas</span><span>numpy</span><span>scikit-learn</span><span>matplotlib</span>
+                </div>
+              </article>
+
+              <!-- Card 9 -->
+              <article class="pb-card" data-tags="Reinforcement Learning">
+                <a href="https://github.com/ShaheerHussain-DataScience/Shaheer-Hussain-Data-Science-Portfolio/tree/main/Python/Reinforced%20Learning/Breakout%20Game" class="image" target="_blank" rel="noopener">
+                  <img src="images/BreakoutRL.png" alt="Python project thumbnail" />
+                  <span class="pb-view-cta">View on GitHub ↗</span>
+                </a>
+                <h3 class="major">Breakout Reinforced Learning ML</h3>
+                <p>A reinforcement learning agent (PPO) learns to play a custom-built Breakout clone purely through trial and error, improving from random flailing to reliably clearing bricks.</p>
+                <div class="pb-tags">
+                  <span class="pb-tag reinforcement">Reinforcement Learning</span>
+                </div>
+                <div class="pb-stack">
+                  <span>gymnasium</span><span>stable-baselines3</span><span>pytorch</span><span>pygame</span>
                 </div>
               </article>
             </div>
